@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Views</title>
+    {% load static %}
+    <link rel='stylesheet' href="{% static 'views.css' %}"> 
+</head>
+<body>
+    <h2><span><a href='/travels'>Back</a>  <a href='/logout'>Logout</a></span></h2>
+    <h1>Welcome {{signedin.fname}}</h1> 
+    <h2>{{trip.place}}</h2>
+    <p>Planned by: {{ name.fname }} {{name.lname}}</p>
+    <p>Description: {{trip.desc}}</p>
+    <p>Travel Date from: {{trip.travel_from}}</p>
+    <p>Travel Date To: {{trip.travel_to}}</p>
+
+    <h2>Other Users Joinging the Trip:
+        {% for person in other %}
+            {% if person.id != name.id %}
+                <p>{{ person.fname }} {{person.lname}}</p>
+            {% endif %}
+        {% endfor %}
+    </h2>
+</body>
+</html>

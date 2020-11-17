@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Add a Trip <span><a href='/travels'>Back</a>  <a href='/logout'>Logout</a></span></h2>
+    <form action='/add' method='post'>
+        {% csrf_token %}
+        <p>Destination: <input type='text' name='place' id='place' required></p>
+        <p>Description: <input type='text' name='desc' id='desc'></p>
+        <br>
+        <p>Travel Date From: <input type="date" name='from' id='from' required></p>
+        <p>Travel Date To: <input type='date' name='to' id='to' required></p>
+        <input type='submit' value='submit'>
+
+
+
+    </form>
+</body>
+</html>
